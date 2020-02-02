@@ -40,8 +40,9 @@ public class Driver {
 	
 	public static void main (String[] args) {
 		int size = 20;
-		double temperature = 0.2;
+		double temperature = 100;
 		int dimension = 30;
+		int waitTime = 2; // how long will the simulation wait before calling ising.evolve()?
 		Ising ising = new Ising(size, temperature);
 		JFrame frame = new JFrame("Ising Model");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +54,7 @@ public class Driver {
 		frame.setVisible(true);
 		for (int i = 0; i < 100000000; i++) {
 			try {
-				Thread.sleep(6);
+				Thread.sleep(waitTime);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
